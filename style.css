@@ -1,0 +1,87 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    font-family: arial, sans-serif;
+    background: #ECF0F8;
+    text-decoration: none}
+    
+    
+    
+      .neumorphisim{
+    width: 100vw;
+     height: 100vh;
+     display: flex;
+    justify-Content : center;
+    align-items: center;
+    flex-wrap: wrap;
+            }
+            .prof{
+                display: grid;
+                place-items: center;
+                margin: 30px;
+                background-color:  #ECF0F8;
+                width:    300px;
+                height:    400px;
+                box-shadow: 10px 10px 18px #D1D9E6,
+              -10px -10px 18px #FFF;
+            border-radius: 18px;
+            
+            
+            }
+            .prof:hover{
+                cursor: pointer;
+            box-shadow: inset 10px 10px 18px #D1D9E6,
+            inset -10px -10px 18px #FFF;
+            }
+            
+            
+            
+
+
+.glassmorphisim {
+
+    width: 100vw;
+     height: 100vh;
+     display: flex;
+    justify-Content : center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: dodgerblue;
+    
+
+
+            }
+
+
+            .prof2{
+                display: grid;
+                place-items: center;
+                margin: 30px;
+                width:    300px;
+                height:    400px;
+              background: rgba( 255, 255, 255, 0.30 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 10.0px );
+-webkit-backdrop-filter: blur( 10.0px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+            border-radius: 18px;
+            
+            
+            }            
+
+
+
+ .BoxShadow{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+   justify-Content : center;
+   align-items: center;
+   flex-wrap: wrap;
+   background-color: white;
+ }           
+        

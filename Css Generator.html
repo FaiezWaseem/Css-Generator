@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <style>
+
+#box-neumorphisim{
+font-size: 30px;
+padding: 20px;
+width:    {{size}}px;
+    height:    {{size}}px;
+background: #ECF0F8;
+box-shadow: {{distance}}px {{distance}}px {{blur}}px #D1D9E6,
+  -{{distance}}px -{{distance}}px {{blur}}px #FFF;
+border-radius: 18px;
+color: grey;}
+#box-neumorphisim:hover{
+    box-shadow: inset {{distance}}px {{distance}}px {{blur}}px #D1D9E6,
+  inset -{{distance}}px -{{distance}}px {{blur}}px #FFF;
+}
+#box-glassmorphisim{
+       z-index: 1;
+       position: absolute;
+       left: 150px;
+    width:    {{size2}}px;
+    height:    {{size2}}px;
+    background: rgba( 255, 255, 255, {{transparency}} );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( {{blur2}}px );
+-webkit-backdrop-filter: blur( {{blur2}}px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+#box-glassmorphisim:hover{
+    cursor: pointer;
+    background: rgba( 255, 255, 255, 0);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 0px );
+-webkit-backdrop-filter: blur(0px );
+}
+#box-shadow{
+    width:    {{size3}}px;
+    height:    {{size3}}px;
+    background: rgba( 255, 255, 255 , 1);
+    -webkit-box-shadow:  {{lr}}px  {{ud}}px {{blur3}}px {{spread}}px rgba(0,0,0, {{opacity2}});
+box-shadow:  {{lr}}px  {{ud}}px {{blur3}}px {{spread}}px rgba(0,0,0, {{opacity2}});
+}
+.code{
+    display: grid;
+    place-items: center;
+    background: rgb(128, 125, 125);
+    border-radius: 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Generator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="neumorphisim">
+    <a id="box-neumorphisim"></a>
+    <div class="prof">
+        <p>box size:</p>
+        <input type="range" min="50" max="200" value="0"  ng-model="size">
+        <label for="size" id="output" >   {{size}}</label>
+        <label for="blur">Blur</label>
+        <input type="range" id="blur" min="1" max="100" value="20"  ng-model="blur">
+        <label for="size" id="output">   {{blur}}</label>
+        <label for="dis">Distance</label>
+        <input type="range" id="dis" min="-50" max="50" value="10" ng-model="distance">
+        <label for="size" id="output">   {{distance}}</label>
+      <label for="color">Color top left:</label>
+        <select name="cars" ng-model="color1">
+            <option value="#D1D9E6">#D1D9E6</option>
+            <option value="#cccccc">#cccccc</option>
+            <option value="#cacaca">#cacaca</option>
+            <option value="#c5c5c5">#c5c5c5</option>
+        </select>
+        <label for="color">Color bottom right:</label>
+        <select name="#FFF"   ng-model="color2">
+            <option value="#FFF">#FFF</option>
+            <option value="#f4f4f4">#f4f4f4</option>
+            <option value="#f6f6f6">#f6f6f6</option>
+            <option value="#fbfbfb">#fbfbfb</option>
+        </select>
+    </div>
+    <pre class="code">
+width:    {{size}}px;
+height:    {{size}}px;
+background: #ECF0F8;
+box-shadow: {{distance}}px {{distance}}px {{blur}}px #D1D9E6,
+-{{distance}}px -{{distance}}px {{blur}}px #FFF;
+
+
+hover Property :
+box-shadow:  inset {{distance}}px {{distance}}px {{blur}}px #D1D9E6,
+  inset -{{distance}}px -{{distance}}px {{blur}}px #FFF;
+
+  Extra Colors Combination:
+  Top left : {{color1}}
+  Bottom right : {{color2}}
+    </pre>
+</div>
+
+
+<div class="glassmorphisim">
+    <h1>glassmorphisim</h1>
+    <a id="box-glassmorphisim"></a>
+    <div class="prof2">
+        <p>box size:</p>
+        <input type="range" min="50" max="300" value="0"  ng-model="size2">
+        <label for="size" id="output" >   {{size2}}</label>
+        <label for="blur">Blur</label>
+        <input type="range" id="blur" min="0" max="15" value="5" step="0.5"  ng-model="blur2">
+        <label for="size" id="output">   {{blur2}}</label>
+        <label for="dis">Transparency</label>
+        <input type="range" id="dis" min="0" max="1.0" step="0.05" value="0.34" ng-model="transparency">
+        <label for="size" id="output">   {{transparency}}</label>
+    </div>
+    <pre class="code">
+        width:    {{size2}}px;
+        height:    {{size2}}px;
+        background: rgba( 255, 255, 255, {{transparency}} );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( {{blur2}}px );
+    -webkit-backdrop-filter: blur( {{blur2}}px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+
+
+    Hover Property:
+    background: rgba( 255, 255, 255, 0);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 0px );
+    -webkit-backdrop-filter: blur(0px );
+
+    </pre>
+</div>
+<div class="BoxShadow">
+  
+    <a id="box-shadow"></a>
+    <div class="prof2">
+        <p>box size:</p>
+        <input type="range" min="50" max="200" value="0"  ng-model="size3">
+        <label for="size" id="output" >   {{size3}}</label>
+        <label for="blur">Blur</label>
+        <input type="range" id="blur" min="0" max="25" value="5" step="0.5"  ng-model="blur3">
+        <label for="size" id="output">   {{blur3}}</label>
+        <label for="dis">Shift Right & Left</label>
+        <input type="range" id="dis" min="-50" max="50" step="1" value="0" ng-model="lr">
+        <label for="size" id="output">   {{lr}}</label>
+        <label for="dis">Shift UP  & Down</label>
+        <input type="range" id="dis" min="-50" max="50" step="1" value="0" ng-model="ud">
+        <label for="size" id="output">   {{ud}}</label>
+        <label for="dis">Spread :{{spread}}</label>
+        <input type="range" id="dis" min="-5" max="5" step="1" value="0" ng-model="spread">
+        <label for="dis">Opacity : {{opacity2}}</label>
+        <input type="range" id="dis" min="0" max="1" step="0.010" value="1" ng-model="opacity2">
+    </div>
+    <pre class="code">
+        background: rgba( 255, 255, 255 , 1);
+        -webkit-box-shadow:  {{lr}}px  {{ud}}px {{blur3}}px {{spread}}px rgba(0,0,0, {{opacity2}});
+    box-shadow:  {{lr}}px  {{ud}}px {{blur3}}px {{spread}}px rgba(0,0,0, {{opacity2}});
+    </pre>
+</div>
+
+</body>
+</html>
